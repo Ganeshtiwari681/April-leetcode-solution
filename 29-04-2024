@@ -1,0 +1,13 @@
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        xo=0
+        for n in nums:
+            xo=xo^n
+        count=0
+        while k or xo:
+            if(k%2)!=(xo%2):
+                count+=1
+            k//=2
+            xo//=2
+        return count
+        
